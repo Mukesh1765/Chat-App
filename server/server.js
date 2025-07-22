@@ -26,14 +26,13 @@ export const userSocketMap = {};
 
 io.on("connection", (socket) => {
   const userId = socket.handshake.auth.userId;
-  console.log("🔌 User connected:", userId);
 
   if (userId) userSocketMap[userId] = socket.id;
 
   io.emit("getOnlineUsers", Object.keys(userSocketMap));
 
   socket.on("disconnect", () => {
-    console.log("❌ User disconnected:", userId);
+    console.log("User disconnected:", userId);
     delete userSocketMap[userId];
     io.emit("getOnlineUsers", Object.keys(userSocketMap));
   });
@@ -58,7 +57,7 @@ await connectDB();
 
 const port = process.env.PORT || 1700;
 server.listen(port, () => {
-  console.log(`🚀 Server running on port ${port} in ${process.env.NODE_ENV} mode`);
+  console.log(`server running on port ${port} in ${process.env.NODE_ENV} mode`);
 });
 
 export default server; 
