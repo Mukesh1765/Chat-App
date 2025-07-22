@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Playwrite+NG+Modern+Guides&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Outfit:wght@100..900&family=Playwrite+NG+Modern+Guides&display=swap');
+@import "tailwindcss";
+
+* {
+  font-family: "Outfit", sans-serif, "Bad Script", "Playwrite NG Modern Guides";
+  color: antiquewhite;
+  scrollbar-width: none;
+}
+
+.triangle {
+  width: 90vw;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.alertColor {
+  color: #78350f;
+}
+
+/* Entry animation */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5) translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.6s ease-out forwards;
+}
+
+.onlineColor {
+  color: rgba(0, 255, 0, 0.4);
+}
+
+.offlineText {
+  color: #9ca3af;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+  border: 3px solid #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
