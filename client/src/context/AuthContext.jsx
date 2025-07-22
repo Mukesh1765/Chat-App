@@ -137,6 +137,8 @@ export const AuthProvider = ({ children }) => {
 
         socketRef.current = io(backendUrl, {
             auth: { userId: userData._id },
+            transports: ["websocket"],
+            withCredentials: true,
         });
 
         socketRef.current.on("connect", () => {
