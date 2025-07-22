@@ -24,19 +24,19 @@ export const io = new Server(server, {
 export const userSocketMap = {}
 
 io.on("connection", (socket) => {
-    const userId = socket.handshake.query.userId
-    console.log("user connected:", userId)
+    const userId = socket.handshake.auth.userId;
+    console.log("user connected:", userId);
 
-    if (userId) userSocketMap[userId] = socket.id
+    if (userId) userSocketMap[userId] = socket.id;
 
-    io.emit("getOnlineUsers", Object.keys(userSocketMap))
+    io.emit("getOnlineUsers", Object.keys(userSocketMap));
 
     socket.on("disconnect", () => {
-        console.log("user disconnected:", userId)
-        delete userSocketMap[userId]
-        io.emit("getOnlineUsers", Object.keys(userSocketMap))
-    })
-})
+        console.log("user disconnected:", userId);
+        delete userSocketMap[userId];
+        io.emit("getOnlineUsers", Object.keys(userSocketMap));
+    });
+});
 
 app.use(cors())
 app.use(express.json({limit: "4mb"}))

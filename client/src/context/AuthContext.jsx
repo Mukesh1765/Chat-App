@@ -136,11 +136,11 @@ export const AuthProvider = ({ children }) => {
         }
 
         socketRef.current = io(backendUrl, {
-            query: { userId: userData._id },
+            auth: { userId: userData._id },
         });
 
         socketRef.current.on("connect", () => {
-            // console.log("Socket connected", socketRef.current.id);
+            console.log("Socket connected", socketRef.current.id);
         });
 
         socketRef.current.on("getOnlineUsers", (userIds) => {
@@ -149,6 +149,10 @@ export const AuthProvider = ({ children }) => {
 
         socketRef.current.on("disconnect", () => {
             setOnlineUsers([]);
+        });
+
+        socketRef.current.on("connect_error", (err) => {
+            console.error("Socket connection error:", err.message);
         });
     };
 
