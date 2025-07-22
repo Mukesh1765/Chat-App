@@ -57,8 +57,10 @@ await connectDB();
 
 // Start server (always start, even in production)
 const port = process.env.PORT || 3000;
-server.listen(port, () => {
-  console.log(`🚀 Server running on port ${port} in ${process.env.NODE_ENV} mode`);
+if (process.env.NODE_ENV !== "production") {
+    server.listen(port, () => {
+    console.log(`🚀 Server running on port ${port} in ${process.env.NODE_ENV} mode`);
 });
 
+}
 export default server; 
