@@ -17,7 +17,7 @@ const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
 export const io = new Server(server, {
   cors: {
     origin: CLIENT_URL,
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true
   }
 });
