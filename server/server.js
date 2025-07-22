@@ -17,9 +17,8 @@ const allowedOrigins = [
 
 export const io = new Server(server, {
     cors: {
-        origin: allowedOrigins,
-        credentials: true,
-    }
+        origin: "*",
+    },
 })
 
 export const userSocketMap = {}
