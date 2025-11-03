@@ -82,10 +82,6 @@ Contributions are welcome!  To contribute to this project:
 4.  Submit a pull request with a clear description of your changes.
 5.  Follow the ESLint rules defined in client/eslint.config.js.
 
-## License Information
-
-License not specified. Please contact the repository owner for licensing details.
-
 ## Acknowledgments
 
 This project utilizes the following open-source libraries:
@@ -94,6 +90,3 @@ This project utilizes the following open-source libraries:
 *   Tailwind CSS
 *   Axios
 *   Socket.IO
-
-And dependencies listed in the package.json files.
-html code for thsi
